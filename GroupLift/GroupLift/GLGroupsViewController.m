@@ -114,6 +114,10 @@ static NSString *CellIdentifier = @"GroupCell";
              }];
         }
     }
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self dismissViewControllerAnimated:YES completion:nil];
+    });
 }
 
 
