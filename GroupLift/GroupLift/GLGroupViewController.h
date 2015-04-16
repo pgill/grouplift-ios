@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GLViewController.h"
 
-@interface GLGroupViewController : UIViewController
-
+@interface GLGroupViewController : GLViewController
+@property (nonatomic, strong) NSString *groupTitle;
 @end

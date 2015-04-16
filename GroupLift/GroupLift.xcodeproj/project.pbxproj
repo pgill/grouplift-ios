@@ -36,6 +36,7 @@
 		3CC591941AE02E0F00CB8B9A /* GLCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC591931AE02E0F00CB8B9A /* GLCollectionViewCell.m */; };
 		3CC591A21AE03CF700CB8B9A /* UIImage+GLImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC591A11AE03CF700CB8B9A /* UIImage+GLImage.m */; };
 		3CC591A61AE042FC00CB8B9A /* GLGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC591A51AE042FC00CB8B9A /* GLGroupViewController.m */; };
+		3CC591A91AE0449200CB8B9A /* GLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC591A81AE0449200CB8B9A /* GLViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,8 @@
 		3CC591A11AE03CF700CB8B9A /* UIImage+GLImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GLImage.m"; sourceTree = "<group>"; };
 		3CC591A41AE042FC00CB8B9A /* GLGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLGroupViewController.h; sourceTree = "<group>"; };
 		3CC591A51AE042FC00CB8B9A /* GLGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLGroupViewController.m; sourceTree = "<group>"; };
+		3CC591A71AE0449200CB8B9A /* GLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLViewController.h; sourceTree = "<group>"; };
+		3CC591A81AE0449200CB8B9A /* GLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +270,8 @@
 				1432D7931ADDE0580025F6ED /* GLGroupsViewController.m */,
 				3CC591A41AE042FC00CB8B9A /* GLGroupViewController.h */,
 				3CC591A51AE042FC00CB8B9A /* GLGroupViewController.m */,
+				3CC591A71AE0449200CB8B9A /* GLViewController.h */,
+				3CC591A81AE0449200CB8B9A /* GLViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -371,6 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CC591A91AE0449200CB8B9A /* GLViewController.m in Sources */,
 				1432D7941ADDE0580025F6ED /* GLGroupsViewController.m in Sources */,
 				3CC591A61AE042FC00CB8B9A /* GLGroupViewController.m in Sources */,
 				1432D7911ADDE0580025F6ED /* AppDelegate.m in Sources */,

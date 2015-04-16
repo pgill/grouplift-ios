@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
 #import "GLCollectionViewCell.h"
+#import "GLGroupViewController.h"
 
 @interface GLGroupsViewController ()
 @property (nonatomic, strong) UICollectionView *collectionView;
@@ -26,6 +27,9 @@ static NSString *CellIdentifier = @"GroupCell";
     self = [super init];
     
     if (self) {
+        self.navigationItem.title = @"GroupLift";
+        self.backButtonTitle = @"Back";
+        
         // Create dummy titles
         _groupItems = @[@"Me",
                         @"Weight Lifting",
@@ -39,7 +43,7 @@ static NSString *CellIdentifier = @"GroupCell";
         // Create dummy images
         NSMutableArray *groupImages = [[NSMutableArray alloc] init];
         for (NSInteger i = 0; i < _groupItems.count; ++i) {
-            UIImage *image = [UIImage imageWithColor:[UIColor greenColor]];
+            UIImage *image = [UIImage imageWithColor:[UIColor lightGrayColor]];
             UIImage *roundedImage = [UIImage createRoundedThumbnailFromImage:image size:CGSizeMake(50.0, 50.0)];
             [groupImages addObject:roundedImage];
         }
@@ -56,9 +60,10 @@ static NSString *CellIdentifier = @"GroupCell";
     // Setup collection view
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     _collectionView = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:layout];
+    _collectionView.backgroundColor = [UIColor clearColor];
     _collectionView.dataSource = self;
     _collectionView.delegate = self;
-    
+
     // Register cell
     [_collectionView registerClass:[GLCollectionViewCell class] forCellWithReuseIdentifier:CellIdentifier];
     
@@ -144,7 +149,7 @@ static NSString *CellIdentifier = @"GroupCell";
     
     // Set image
     cell.imageView.image = [_groupImages objectAtIndex:indexPath.row];
-    
+
     return cell;
 }
 
@@ -162,7 +167,13 @@ static NSString *CellIdentifier = @"GroupCell";
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
 {
-    return 10.0;
+    return 0.0;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    GLGroupViewController *vc = [[GLGroupViewController alloc] init];
+    vc.groupTitle = [_groupItems objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 @end

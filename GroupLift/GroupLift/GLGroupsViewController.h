@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <ParseUI/ParseUI.h>
+#import "GLViewController.h"
 
-@interface GLGroupsViewController : UIViewController <PFLogInViewControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface GLGroupsViewController : GLViewController <PFLogInViewControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @end
 

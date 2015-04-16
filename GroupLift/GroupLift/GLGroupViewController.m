@@ -9,5 +9,20 @@
 #import "GLGroupViewController.h"
 
 @implementation GLGroupViewController
+- (id)init
+{
+    self = [super init];
+    
+    if (self) {
+    
+    }
+    
+    return self;
+}
+
+- (void)setGroupTitle:(NSString *)groupTitle
+{
+    self.navigationItem.title = groupTitle;
+}
 
 @end
