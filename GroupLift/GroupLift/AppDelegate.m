@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
-#import "ViewController.h"
+#import "GLGroupsViewController.h"
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
 #import <FBSDKCoreKit/FBSDKApplicationDelegate.h>
 #import <FBSDKCoreKit/FBSDKAppEvents.h>
@@ -34,8 +34,7 @@
     // ****************************************************************************
     [PFFacebookUtils initializeFacebookWithApplicationLaunchOptions:launchOptions];
     
-    [PFUser logOut];
-    ViewController *vc = [[ViewController alloc] init];
+    GLGroupsViewController *vc = [[GLGroupsViewController alloc] init];
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:vc];
     
     [self.window makeKeyAndVisible];
