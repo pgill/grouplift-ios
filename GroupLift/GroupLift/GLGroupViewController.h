@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  GLGroupViewController.h
 //  GroupLift
 //
-//  Created by Prabhdeep Gill on 4/14/15.
+//  Created by Ian Mendiola on 4/16/15.
 //  Copyright (c) 2015 SoThree. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import <ParseUI/ParseUI.h>
 
-@interface GLGroupViewController : UIViewController <PFLogInViewControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface GLGroupViewController : UIViewController
 
 @end
-

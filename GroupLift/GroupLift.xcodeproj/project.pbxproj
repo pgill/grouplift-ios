@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		1432D78E1ADDE0580025F6ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1432D78D1ADDE0580025F6ED /* main.m */; };
 		1432D7911ADDE0580025F6ED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1432D7901ADDE0580025F6ED /* AppDelegate.m */; };
-		1432D7941ADDE0580025F6ED /* GLGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1432D7931ADDE0580025F6ED /* GLGroupViewController.m */; };
+		1432D7941ADDE0580025F6ED /* GLGroupsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1432D7931ADDE0580025F6ED /* GLGroupsViewController.m */; };
 		1432D7991ADDE0580025F6ED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1432D7981ADDE0580025F6ED /* Images.xcassets */; };
 		1432D7A81ADDE0580025F6ED /* GroupLiftTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1432D7A71ADDE0580025F6ED /* GroupLiftTests.m */; };
 		1432D7B91ADDE0B10025F6ED /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1432D7B31ADDE0B10025F6ED /* Parse.framework */; };
@@ -35,6 +35,7 @@
 		1432D7E91ADED97F0025F6ED /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1432D7E81ADED97F0025F6ED /* ParseFacebookUtilsV4.framework */; };
 		3CC591941AE02E0F00CB8B9A /* GLCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC591931AE02E0F00CB8B9A /* GLCollectionViewCell.m */; };
 		3CC591A21AE03CF700CB8B9A /* UIImage+GLImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC591A11AE03CF700CB8B9A /* UIImage+GLImage.m */; };
+		3CC591A61AE042FC00CB8B9A /* GLGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC591A51AE042FC00CB8B9A /* GLGroupViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,8 +54,8 @@
 		1432D78D1ADDE0580025F6ED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1432D78F1ADDE0580025F6ED /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1432D7901ADDE0580025F6ED /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1432D7921ADDE0580025F6ED /* GLGroupViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLGroupViewController.h; sourceTree = "<group>"; };
-		1432D7931ADDE0580025F6ED /* GLGroupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLGroupViewController.m; sourceTree = "<group>"; };
+		1432D7921ADDE0580025F6ED /* GLGroupsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLGroupsViewController.h; sourceTree = "<group>"; };
+		1432D7931ADDE0580025F6ED /* GLGroupsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLGroupsViewController.m; sourceTree = "<group>"; };
 		1432D7981ADDE0580025F6ED /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1432D7A11ADDE0580025F6ED /* GroupLiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GroupLiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1432D7A61ADDE0580025F6ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -86,6 +87,8 @@
 		3CC5919E1AE0372300CB8B9A /* GLGeometry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLGeometry.h; sourceTree = "<group>"; };
 		3CC591A01AE03CF700CB8B9A /* UIImage+GLImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GLImage.h"; sourceTree = "<group>"; };
 		3CC591A11AE03CF700CB8B9A /* UIImage+GLImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GLImage.m"; sourceTree = "<group>"; };
+		3CC591A41AE042FC00CB8B9A /* GLGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLGroupViewController.h; sourceTree = "<group>"; };
+		3CC591A51AE042FC00CB8B9A /* GLGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLGroupViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,14 +152,13 @@
 		1432D78A1ADDE0580025F6ED /* GroupLift */ = {
 			isa = PBXGroup;
 			children = (
+				3CC591901AE02DF100CB8B9A /* Views */,
+				3CC591A31AE042B900CB8B9A /* ViewControllers */,
 				3CC5919F1AE03CD000CB8B9A /* Categories */,
 				3CC5919B1AE0365400CB8B9A /* Helpers */,
 				3CC591991AE0330D00CB8B9A /* Categories */,
-				3CC591901AE02DF100CB8B9A /* Views */,
 				1432D78F1ADDE0580025F6ED /* AppDelegate.h */,
 				1432D7901ADDE0580025F6ED /* AppDelegate.m */,
-				1432D7921ADDE0580025F6ED /* GLGroupViewController.h */,
-				1432D7931ADDE0580025F6ED /* GLGroupViewController.m */,
 				1432D7981ADDE0580025F6ED /* Images.xcassets */,
 				1432D78B1ADDE0580025F6ED /* Supporting Files */,
 			);
@@ -256,6 +258,17 @@
 				3CC591A11AE03CF700CB8B9A /* UIImage+GLImage.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		3CC591A31AE042B900CB8B9A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1432D7921ADDE0580025F6ED /* GLGroupsViewController.h */,
+				1432D7931ADDE0580025F6ED /* GLGroupsViewController.m */,
+				3CC591A41AE042FC00CB8B9A /* GLGroupViewController.h */,
+				3CC591A51AE042FC00CB8B9A /* GLGroupViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,7 +371,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1432D7941ADDE0580025F6ED /* GLGroupViewController.m in Sources */,
+				1432D7941ADDE0580025F6ED /* GLGroupsViewController.m in Sources */,
+				3CC591A61AE042FC00CB8B9A /* GLGroupViewController.m in Sources */,
 				1432D7911ADDE0580025F6ED /* AppDelegate.m in Sources */,
 				3CC591A21AE03CF700CB8B9A /* UIImage+GLImage.m in Sources */,
 				1432D78E1ADDE0580025F6ED /* main.m in Sources */,

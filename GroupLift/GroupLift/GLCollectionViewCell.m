@@ -8,8 +8,6 @@
 
 #import "GLCollectionViewCell.h"
 
-#define IMAGEVIEW_SIZE CGSizeMake(50.0, 50.0)
-
 @implementation GLCollectionViewCell
 - (id)initWithFrame:(CGRect)frame
 {
@@ -34,10 +32,14 @@
 
 - (void)layoutSubviews
 {
-    _imageView.frame = (CGRect){.origin = (CGPoint){.x = 0.0, .y = GLCenterY(self.frame.size, IMAGEVIEW_SIZE)}, .size = IMAGEVIEW_SIZE};
+    CGSize imageViewSize = CGSizeMake(50.0, 50.0);
+    CGFloat imageTextSpacing = 10.0;
+    CGFloat imageLeftMargin = 10.0;
+    
+    _imageView.frame = (CGRect){.origin = (CGPoint){.x = imageLeftMargin, .y = GLCenterY(self.frame.size, imageViewSize)}, .size = imageViewSize};
     
     [_titleLabel sizeToFit];
-    _titleLabel.frame = (CGRect){.origin = (CGPoint){.x = GLLeft(_imageView.frame), .y = GLCenterY(self.frame.size, _titleLabel.frame.size)}, .size = _titleLabel.frame.size};
+    _titleLabel.frame = (CGRect){.origin = (CGPoint){.x = GLLeft(_imageView.frame) + imageTextSpacing, .y = GLCenterY(self.frame.size, _titleLabel.frame.size)}, .size = _titleLabel.frame.size};
 }
 
 @end
