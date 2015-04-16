@@ -33,6 +33,9 @@
 		1432D7E61ADED9580025F6ED /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1432D7E41ADED9580025F6ED /* FBSDKCoreKit.framework */; };
 		1432D7E71ADED9580025F6ED /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1432D7E51ADED9580025F6ED /* FBSDKLoginKit.framework */; };
 		1432D7E91ADED97F0025F6ED /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1432D7E81ADED97F0025F6ED /* ParseFacebookUtilsV4.framework */; };
+		14C2B89E1AE059FF0055FE21 /* GLGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C2B89D1AE059FF0055FE21 /* GLGroup.m */; };
+		14C2B8A21AE062060055FE21 /* GLGroupsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C2B8A11AE062060055FE21 /* GLGroupsManager.m */; };
+		14C2B8A51AE06A580055FE21 /* GLUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C2B8A41AE06A580055FE21 /* GLUser.m */; };
 		3CC591941AE02E0F00CB8B9A /* GLCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC591931AE02E0F00CB8B9A /* GLCollectionViewCell.m */; };
 		3CC591A21AE03CF700CB8B9A /* UIImage+GLImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC591A11AE03CF700CB8B9A /* UIImage+GLImage.m */; };
 		3CC591A61AE042FC00CB8B9A /* GLGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC591A51AE042FC00CB8B9A /* GLGroupViewController.m */; };
@@ -82,6 +85,12 @@
 		1432D7E41ADED9580025F6ED /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		1432D7E51ADED9580025F6ED /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		1432D7E81ADED97F0025F6ED /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
+		14C2B89C1AE059FF0055FE21 /* GLGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLGroup.h; sourceTree = "<group>"; };
+		14C2B89D1AE059FF0055FE21 /* GLGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLGroup.m; sourceTree = "<group>"; };
+		14C2B8A01AE062060055FE21 /* GLGroupsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLGroupsManager.h; sourceTree = "<group>"; };
+		14C2B8A11AE062060055FE21 /* GLGroupsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLGroupsManager.m; sourceTree = "<group>"; };
+		14C2B8A31AE06A580055FE21 /* GLUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLUser.h; sourceTree = "<group>"; };
+		14C2B8A41AE06A580055FE21 /* GLUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLUser.m; sourceTree = "<group>"; };
 		3CC591921AE02E0F00CB8B9A /* GLCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLCollectionViewCell.h; sourceTree = "<group>"; };
 		3CC591931AE02E0F00CB8B9A /* GLCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLCollectionViewCell.m; sourceTree = "<group>"; };
 		3CC591961AE0312B00CB8B9A /* GLPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLPrefixHeader.pch; sourceTree = "<group>"; };
@@ -155,6 +164,8 @@
 		1432D78A1ADDE0580025F6ED /* GroupLift */ = {
 			isa = PBXGroup;
 			children = (
+				14C2B89F1AE061D80055FE21 /* API */,
+				14C2B89B1AE056CB0055FE21 /* Model */,
 				3CC591901AE02DF100CB8B9A /* Views */,
 				3CC591A31AE042B900CB8B9A /* ViewControllers */,
 				3CC5919F1AE03CD000CB8B9A /* Categories */,
@@ -220,6 +231,26 @@
 				1432D7B71ADDE0B10025F6ED /* ParseUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		14C2B89B1AE056CB0055FE21 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				14C2B89C1AE059FF0055FE21 /* GLGroup.h */,
+				14C2B89D1AE059FF0055FE21 /* GLGroup.m */,
+				14C2B8A31AE06A580055FE21 /* GLUser.h */,
+				14C2B8A41AE06A580055FE21 /* GLUser.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		14C2B89F1AE061D80055FE21 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				14C2B8A01AE062060055FE21 /* GLGroupsManager.h */,
+				14C2B8A11AE062060055FE21 /* GLGroupsManager.m */,
+			);
+			name = API;
 			sourceTree = "<group>";
 		};
 		3CC591901AE02DF100CB8B9A /* Views */ = {
@@ -380,9 +411,12 @@
 				1432D7941ADDE0580025F6ED /* GLGroupsViewController.m in Sources */,
 				3CC591A61AE042FC00CB8B9A /* GLGroupViewController.m in Sources */,
 				1432D7911ADDE0580025F6ED /* AppDelegate.m in Sources */,
+				14C2B89E1AE059FF0055FE21 /* GLGroup.m in Sources */,
+				14C2B8A21AE062060055FE21 /* GLGroupsManager.m in Sources */,
 				3CC591A21AE03CF700CB8B9A /* UIImage+GLImage.m in Sources */,
 				1432D78E1ADDE0580025F6ED /* main.m in Sources */,
 				3CC591941AE02E0F00CB8B9A /* GLCollectionViewCell.m in Sources */,
+				14C2B8A51AE06A580055FE21 /* GLUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

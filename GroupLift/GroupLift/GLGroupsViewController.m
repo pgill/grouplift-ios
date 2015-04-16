@@ -12,6 +12,7 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import "GLCollectionViewCell.h"
 #import "GLGroupViewController.h"
+#import "GLGroupsManager.h"
 
 
 @interface GLGroupsViewController ()
@@ -32,25 +33,7 @@ static NSString *CellIdentifier = @"GroupCell";
         self.navigationItem.title = @"GroupLift";
         self.backButtonTitle = @"Back";
         
-        // Create dummy titles
-        _groupItems = @[@"Me",
-                        @"Weight Lifting",
-                        @"Squat Club",
-                        @"Umano",
-                        @"Ian, Yuna",
-                        @"Ian, Patrick",
-                        @"Get Huge Crew"
-                        ];
-        
-        // Create dummy images
-        NSMutableArray *groupImages = [[NSMutableArray alloc] init];
-        for (NSInteger i = 0; i < _groupItems.count; ++i) {
-            UIImage *image = [UIImage imageWithColor:[UIColor lightGrayColor]];
-            UIImage *roundedImage = [UIImage createRoundedThumbnailFromImage:image size:CGSizeMake(50.0, 50.0)];
-            [groupImages addObject:roundedImage];
-        }
-        
-        _groupImages = [NSArray arrayWithArray:groupImages];
+
     }
     
     return self;
@@ -71,13 +54,26 @@ static NSString *CellIdentifier = @"GroupCell";
     
     if ([PFUser currentUser] &&
          [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) {
-        PFQuery *query = [PFQuery queryWithClassName:@"Group"];
-        [query whereKey:@"members" containedIn:@[[PFUser currentUser]]];
-        
-        [query findObjectsInBackgroundWithBlock:^(NSArray *groups, NSError *error) {
-            NSLog(@"error: %@", error);
-            NSLog(@"%@", groups);
-        }];
+       [GLGroupsManager loadGroupsForUserWithSuccess:^(NSArray *groups) {
+           
+           // Create dummy titles
+           _groupItems = groups;
+           
+           // Create dummy images
+           NSMutableArray *groupImages = [[NSMutableArray alloc] init];
+           for (NSInteger i = 0; i < _groupItems.count; ++i) {
+               UIImage *image = [UIImage imageWithColor:[UIColor lightGrayColor]];
+               UIImage *roundedImage = [UIImage createRoundedThumbnailFromImage:image size:CGSizeMake(50.0, 50.0)];
+               [groupImages addObject:roundedImage];
+           }
+           
+           _groupImages = [NSArray arrayWithArray:groupImages];
+           
+           [_collectionView reloadData];
+
+       } failure:^(NSError *error) {
+           NSLog(@"failure: %@", error);
+       }];
     } else {
         PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
         [logInViewController setFacebookPermissions:[NSArray arrayWithObjects:@"email", @"public_profile",  @"user_friends", nil]];
@@ -111,8 +107,10 @@ static NSString *CellIdentifier = @"GroupCell";
              startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
                  if (!error) {
                      NSDictionary *r = (NSDictionary *)result;
+                     NSLog(@"request: %@", r);
                      user.email = [r objectForKey:@"email"];
                      [user setObject:[r objectForKey:@"name"] forKey:@"name"];
+                     [user setObject:[r objectForKey:@"id"] forKey:@"facebookId"];
                      [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                          NSLog(@"success: %d", succeeded);
                      }];
@@ -121,9 +119,9 @@ static NSString *CellIdentifier = @"GroupCell";
         }
     }
     
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self dismissViewControllerAnimated:YES completion:nil];
-    });
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        [self dismissViewControllerAnimated:YES completion:nil];
+//    });
 }
 
 
@@ -149,7 +147,8 @@ static NSString *CellIdentifier = @"GroupCell";
     GLCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Set title
-    cell.titleLabel.text = [_groupItems objectAtIndex:indexPath.row];
+    GLGroup *group = [_groupItems objectAtIndex:indexPath.row];
+    cell.titleLabel.text = group.name;
     
     // Set image
     cell.imageView.image = [_groupImages objectAtIndex:indexPath.row];
