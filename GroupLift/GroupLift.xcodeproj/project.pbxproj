@@ -141,6 +141,7 @@
 		1432D78A1ADDE0580025F6ED /* GroupLift */ = {
 			isa = PBXGroup;
 			children = (
+				145BDD391AE034780081BDA1 /* Model */,
 				1432D78F1ADDE0580025F6ED /* AppDelegate.h */,
 				1432D7901ADDE0580025F6ED /* AppDelegate.m */,
 				1432D7921ADDE0580025F6ED /* ViewController.h */,
@@ -202,6 +203,13 @@
 				1432D7B71ADDE0B10025F6ED /* ParseUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		145BDD391AE034780081BDA1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -487,6 +495,7 @@
 				1432D7AD1ADDE0580025F6ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1432D7AE1ADDE0580025F6ED /* Build configuration list for PBXNativeTarget "GroupLiftTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +504,7 @@
 				1432D7B01ADDE0580025F6ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

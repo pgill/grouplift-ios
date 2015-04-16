@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import <Parse/Parse.h>
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
+//#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 @interface ViewController ()
 
@@ -42,7 +44,7 @@
         }];
     } else {
         PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
-        [logInViewController setFacebookPermissions:[NSArray arrayWithObjects:@"email", @"public_profile",  @"user_friends", nil]];
+        [logInViewController setFacebookPermissions:[NSArray arrayWithObjects:@"public_profile", @"user_friends", @"email", nil]];
         [logInViewController setFields:PFLogInFieldsFacebook | PFLogInFieldsDismissButton];
         logInViewController.delegate = self;
         [self presentViewController:logInViewController animated:YES completion:nil];
@@ -64,8 +66,22 @@
 
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user
 {
-    
-    NSLog(@"%@", user);
+    // After logging in with Facebook
+    if (!user.email) {
+        if ([FBSDKAccessToken currentAccessToken]) {
+            [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil]
+             startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+                 if (!error) {
+                     NSDictionary *r = (NSDictionary *)result;
+                     user.email = [r objectForKey:@"email"];
+                     [user setObject:[r objectForKey:@"name"] forKey:@"name"];
+                     [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                         NSLog(@"success: %d", succeeded);
+                     }];
+                 }
+             }];
+        }
+    }
     
 //    NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
 //    [standardUserDefaults setObject:user forKey:@"current_user"];
