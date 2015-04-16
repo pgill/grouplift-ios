@@ -24,7 +24,6 @@
         
         // Image View
         _imageView = [[UIImageView alloc] init];
-        _imageView.backgroundColor = [UIColor blueColor];
         
         [self addSubview:_titleLabel];
         [self addSubview:_imageView];
@@ -36,7 +35,7 @@
 - (void)layoutSubviews
 {
     _imageView.frame = (CGRect){.origin = (CGPoint){.x = 0.0, .y = GLCenterY(self.frame.size, IMAGEVIEW_SIZE)}, .size = IMAGEVIEW_SIZE};
-
+    
     [_titleLabel sizeToFit];
     _titleLabel.frame = (CGRect){.origin = (CGPoint){.x = GLLeft(_imageView.frame), .y = GLCenterY(self.frame.size, _titleLabel.frame.size)}, .size = _titleLabel.frame.size};
 }

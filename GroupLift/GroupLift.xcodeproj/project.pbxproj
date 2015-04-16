@@ -34,6 +34,7 @@
 		1432D7E71ADED9580025F6ED /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1432D7E51ADED9580025F6ED /* FBSDKLoginKit.framework */; };
 		1432D7E91ADED97F0025F6ED /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1432D7E81ADED97F0025F6ED /* ParseFacebookUtilsV4.framework */; };
 		3CC591941AE02E0F00CB8B9A /* GLCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC591931AE02E0F00CB8B9A /* GLCollectionViewCell.m */; };
+		3CC591A21AE03CF700CB8B9A /* UIImage+GLImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC591A11AE03CF700CB8B9A /* UIImage+GLImage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,8 @@
 		3CC591931AE02E0F00CB8B9A /* GLCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLCollectionViewCell.m; sourceTree = "<group>"; };
 		3CC591961AE0312B00CB8B9A /* GLPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLPrefixHeader.pch; sourceTree = "<group>"; };
 		3CC5919E1AE0372300CB8B9A /* GLGeometry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLGeometry.h; sourceTree = "<group>"; };
+		3CC591A01AE03CF700CB8B9A /* UIImage+GLImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GLImage.h"; sourceTree = "<group>"; };
+		3CC591A11AE03CF700CB8B9A /* UIImage+GLImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GLImage.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +149,7 @@
 		1432D78A1ADDE0580025F6ED /* GroupLift */ = {
 			isa = PBXGroup;
 			children = (
+				3CC5919F1AE03CD000CB8B9A /* Categories */,
 				3CC5919B1AE0365400CB8B9A /* Helpers */,
 				3CC591991AE0330D00CB8B9A /* Categories */,
 				3CC591901AE02DF100CB8B9A /* Views */,
@@ -243,6 +247,15 @@
 				3CC5919E1AE0372300CB8B9A /* GLGeometry.h */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		3CC5919F1AE03CD000CB8B9A /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				3CC591A01AE03CF700CB8B9A /* UIImage+GLImage.h */,
+				3CC591A11AE03CF700CB8B9A /* UIImage+GLImage.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,6 +360,7 @@
 			files = (
 				1432D7941ADDE0580025F6ED /* GLGroupViewController.m in Sources */,
 				1432D7911ADDE0580025F6ED /* AppDelegate.m in Sources */,
+				3CC591A21AE03CF700CB8B9A /* UIImage+GLImage.m in Sources */,
 				1432D78E1ADDE0580025F6ED /* main.m in Sources */,
 				3CC591941AE02E0F00CB8B9A /* GLCollectionViewCell.m in Sources */,
 			);

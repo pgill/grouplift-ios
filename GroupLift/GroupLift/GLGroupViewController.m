@@ -13,11 +13,42 @@
 
 @interface GLGroupViewController ()
 @property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, strong) NSArray *groupItems;
+@property (nonatomic, strong) NSArray *groupImages;
 @end
 
 static NSString *CellIdentifier = @"GroupCell";
 
 @implementation GLGroupViewController
+
+- (id)init
+{
+    self = [super init];
+    
+    if (self) {
+        // Create dummy titles
+        _groupItems = @[@"Me",
+                        @"Weight Lifting",
+                        @"Squat Club",
+                        @"Umano",
+                        @"Ian, Yuna",
+                        @"Ian, Patrick",
+                        @"Get Huge Crew"
+                        ];
+        
+        // Create dummy images
+        NSMutableArray *groupImages = [[NSMutableArray alloc] init];
+        for (NSInteger i = 0; i < _groupItems.count; ++i) {
+            UIImage *image = [UIImage imageWithColor:[UIColor greenColor]];
+            UIImage *roundedImage = [UIImage createRoundedThumbnailFromImage:image size:CGSizeMake(50.0, 50.0)];
+            [groupImages addObject:roundedImage];
+        }
+        
+        _groupImages = [NSArray arrayWithArray:groupImages];
+    }
+    
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -96,7 +127,7 @@ static NSString *CellIdentifier = @"GroupCell";
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 10;
+    return _groupItems.count;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -107,7 +138,12 @@ static NSString *CellIdentifier = @"GroupCell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     GLCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
-    cell.titleLabel.text = [NSString stringWithFormat:@"Cell %ld", (long)indexPath.row];
+    
+    // Set title
+    cell.titleLabel.text = [_groupItems objectAtIndex:indexPath.row];
+    
+    // Set image
+    cell.imageView.image = [_groupImages objectAtIndex:indexPath.row];
     
     return cell;
 }
