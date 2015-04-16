@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		1432D78E1ADDE0580025F6ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1432D78D1ADDE0580025F6ED /* main.m */; };
 		1432D7911ADDE0580025F6ED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1432D7901ADDE0580025F6ED /* AppDelegate.m */; };
-		1432D7941ADDE0580025F6ED /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1432D7931ADDE0580025F6ED /* ViewController.m */; };
+		1432D7941ADDE0580025F6ED /* GLGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1432D7931ADDE0580025F6ED /* GLGroupViewController.m */; };
 		1432D7991ADDE0580025F6ED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1432D7981ADDE0580025F6ED /* Images.xcassets */; };
 		1432D7A81ADDE0580025F6ED /* GroupLiftTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1432D7A71ADDE0580025F6ED /* GroupLiftTests.m */; };
 		1432D7B91ADDE0B10025F6ED /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1432D7B31ADDE0B10025F6ED /* Parse.framework */; };
@@ -33,6 +33,7 @@
 		1432D7E61ADED9580025F6ED /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1432D7E41ADED9580025F6ED /* FBSDKCoreKit.framework */; };
 		1432D7E71ADED9580025F6ED /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1432D7E51ADED9580025F6ED /* FBSDKLoginKit.framework */; };
 		1432D7E91ADED97F0025F6ED /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1432D7E81ADED97F0025F6ED /* ParseFacebookUtilsV4.framework */; };
+		3CC591941AE02E0F00CB8B9A /* GLCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC591931AE02E0F00CB8B9A /* GLCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +52,8 @@
 		1432D78D1ADDE0580025F6ED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1432D78F1ADDE0580025F6ED /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1432D7901ADDE0580025F6ED /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1432D7921ADDE0580025F6ED /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		1432D7931ADDE0580025F6ED /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1432D7921ADDE0580025F6ED /* GLGroupViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLGroupViewController.h; sourceTree = "<group>"; };
+		1432D7931ADDE0580025F6ED /* GLGroupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLGroupViewController.m; sourceTree = "<group>"; };
 		1432D7981ADDE0580025F6ED /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1432D7A11ADDE0580025F6ED /* GroupLiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GroupLiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1432D7A61ADDE0580025F6ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,6 +79,10 @@
 		1432D7E41ADED9580025F6ED /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		1432D7E51ADED9580025F6ED /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		1432D7E81ADED97F0025F6ED /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
+		3CC591921AE02E0F00CB8B9A /* GLCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLCollectionViewCell.h; sourceTree = "<group>"; };
+		3CC591931AE02E0F00CB8B9A /* GLCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLCollectionViewCell.m; sourceTree = "<group>"; };
+		3CC591961AE0312B00CB8B9A /* GLPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLPrefixHeader.pch; sourceTree = "<group>"; };
+		3CC5919E1AE0372300CB8B9A /* GLGeometry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLGeometry.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,10 +146,13 @@
 		1432D78A1ADDE0580025F6ED /* GroupLift */ = {
 			isa = PBXGroup;
 			children = (
+				3CC5919B1AE0365400CB8B9A /* Helpers */,
+				3CC591991AE0330D00CB8B9A /* Categories */,
+				3CC591901AE02DF100CB8B9A /* Views */,
 				1432D78F1ADDE0580025F6ED /* AppDelegate.h */,
 				1432D7901ADDE0580025F6ED /* AppDelegate.m */,
-				1432D7921ADDE0580025F6ED /* ViewController.h */,
-				1432D7931ADDE0580025F6ED /* ViewController.m */,
+				1432D7921ADDE0580025F6ED /* GLGroupViewController.h */,
+				1432D7931ADDE0580025F6ED /* GLGroupViewController.m */,
 				1432D7981ADDE0580025F6ED /* Images.xcassets */,
 				1432D78B1ADDE0580025F6ED /* Supporting Files */,
 			);
@@ -156,6 +164,7 @@
 			children = (
 				1432D78C1ADDE0580025F6ED /* Info.plist */,
 				1432D78D1ADDE0580025F6ED /* main.m */,
+				3CC591961AE0312B00CB8B9A /* GLPrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -204,6 +213,38 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3CC591901AE02DF100CB8B9A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3CC591911AE02DFB00CB8B9A /* CollectionViewCells */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		3CC591911AE02DFB00CB8B9A /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				3CC591921AE02E0F00CB8B9A /* GLCollectionViewCell.h */,
+				3CC591931AE02E0F00CB8B9A /* GLCollectionViewCell.m */,
+			);
+			name = CollectionViewCells;
+			sourceTree = "<group>";
+		};
+		3CC591991AE0330D00CB8B9A /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		3CC5919B1AE0365400CB8B9A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3CC5919E1AE0372300CB8B9A /* GLGeometry.h */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -248,6 +289,7 @@
 		1432D7801ADDE0580025F6ED /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = GL;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = SoThree;
 				TargetAttributes = {
@@ -303,9 +345,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1432D7941ADDE0580025F6ED /* ViewController.m in Sources */,
+				1432D7941ADDE0580025F6ED /* GLGroupViewController.m in Sources */,
 				1432D7911ADDE0580025F6ED /* AppDelegate.m in Sources */,
 				1432D78E1ADDE0580025F6ED /* main.m in Sources */,
+				3CC591941AE02E0F00CB8B9A /* GLCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +457,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
+				GCC_PREFIX_HEADER = GroupLift/GLPrefixHeader.pch;
 				INFOPLIST_FILE = GroupLift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -428,6 +472,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
+				GCC_PREFIX_HEADER = GroupLift/GLPrefixHeader.pch;
 				INFOPLIST_FILE = GroupLift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -487,6 +532,7 @@
 				1432D7AD1ADDE0580025F6ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1432D7AE1ADDE0580025F6ED /* Build configuration list for PBXNativeTarget "GroupLiftTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +541,7 @@
 				1432D7B01ADDE0580025F6ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

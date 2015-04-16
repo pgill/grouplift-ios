@@ -6,30 +6,30 @@
 //  Copyright (c) 2015 SoThree. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "GLGroupViewController.h"
 #import <Parse/Parse.h>
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
+#import "GLCollectionViewCell.h"
 
-@interface ViewController ()
-
+@interface GLGroupViewController ()
+@property (nonatomic, strong) UICollectionView *collectionView;
 @end
 
-@implementation ViewController
+static NSString *CellIdentifier = @"GroupCell";
 
-- (id)init {
-    self = [super init];
-    
-    if (self) {
-     //
-    }
-    
-    return self;
-}
+@implementation GLGroupViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor blueColor];
+    // Setup collection view
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    _collectionView = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:layout];
+    _collectionView.dataSource = self;
+    _collectionView.delegate = self;
+    
+    // Register cell
+    [_collectionView registerClass:[GLCollectionViewCell class] forCellWithReuseIdentifier:CellIdentifier];
     
     if ([PFUser currentUser] &&
          [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) {
@@ -47,8 +47,9 @@
         logInViewController.delegate = self;
         [self presentViewController:logInViewController animated:YES completion:nil];
     }
-
     
+    // Add subviews
+    [self.view addSubview:_collectionView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,6 +57,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Login
 
 - (void)logInViewController:(PFLogInViewController *)logInController didFailToLogInWithError:(NSError *)error
 {
@@ -90,5 +92,41 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+#pragma mark - UICollectionViewDataSource
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return 10;
+}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 1;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    GLCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
+    cell.titleLabel.text = [NSString stringWithFormat:@"Cell %ld", (long)indexPath.row];
+    
+    return cell;
+}
+
+#pragma mark - UICollectionViewDelegateFlowLayout
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return (CGSize){.width = self.view.frame.size.width, .height = 75.0};
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    return UIEdgeInsetsZero;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
+{
+    return 10.0;
+}
 
 @end

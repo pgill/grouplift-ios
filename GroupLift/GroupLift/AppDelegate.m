@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
-#import "ViewController.h"
+#import "GLGroupViewController.h"
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
 #import <FBSDKCoreKit/FBSDKApplicationDelegate.h>
 #import <FBSDKCoreKit/FBSDKAppEvents.h>
@@ -34,7 +34,7 @@
     // ****************************************************************************
     [PFFacebookUtils initializeFacebookWithApplicationLaunchOptions:launchOptions];
     
-    ViewController *vc = [[ViewController alloc] init];
+    GLGroupViewController *vc = [[GLGroupViewController alloc] init];
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:vc];
     
     [self.window makeKeyAndVisible];
