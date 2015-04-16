@@ -9,8 +9,10 @@
 #import "GLGroupsViewController.h"
 #import <Parse/Parse.h>
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import "GLCollectionViewCell.h"
 #import "GLGroupViewController.h"
+
 
 @interface GLGroupsViewController ()
 @property (nonatomic, strong) UICollectionView *collectionView;
@@ -102,24 +104,26 @@ static NSString *CellIdentifier = @"GroupCell";
 
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user
 {
+    // After logging in with Facebook
+    if (!user.email) {
+        if ([FBSDKAccessToken currentAccessToken]) {
+            [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil]
+             startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+                 if (!error) {
+                     NSDictionary *r = (NSDictionary *)result;
+                     user.email = [r objectForKey:@"email"];
+                     [user setObject:[r objectForKey:@"name"] forKey:@"name"];
+                     [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                         NSLog(@"success: %d", succeeded);
+                     }];
+                 }
+             }];
+        }
+    }
     
-    NSLog(@"%@", user);
-    
-//    NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
-//    [standardUserDefaults setObject:user forKey:@"current_user"];
-    
-    
-//    PFObject *group = [PFObject objectWithClassName:@"Group"];
-//    group[@"members"] = [NSArray arrayWithObjects:user, nil];
-//    
-//    [group saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//        NSLog(@"success; %d", succeeded);
-//    }];
-    
-
-//    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
-//    self.view.backgroundColor = [UIColor redColor];
-
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self dismissViewControllerAnimated:YES completion:nil];
+    });
 }
 
 
